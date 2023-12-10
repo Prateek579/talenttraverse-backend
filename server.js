@@ -13,27 +13,10 @@ connectDb();
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/api/user", userRouter);
+app.get("/", (req, res) => {
+    res.send("API IS RUNNING");
+});
 
 app.listen(PORT, () => {
   console.log(`app is running on PORT ${PORT}`);
 });
-
-// const { spawn } = require("child_process");
-
-// const childPython = spawn("python", ["ScrapData.py", "prateek"]);
-
-// let jobDetails = "";
-
-// childPython.stdout.on("data", (data) => {
-//   console.log(`stdout: ${data}`);
-//   jobDetails += data;
-//   console.log("copy data is", jobDetails);
-// });
-
-// childPython.stderr.on("data", (data) => {
-//   console.log(`stderr: ${data}`);
-// });
-
-// childPython.on("close", (code) => {
-//   console.log(`child process exit with code ${code}`);
-// });
