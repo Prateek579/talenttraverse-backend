@@ -12,9 +12,6 @@ connectDb();
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use("/", (req, res) => {
-  res.status(200).json({ message: "app is running successfully" });
-});
 app.use("/api/user", userRouter);
 
 app.listen(PORT, () => {
